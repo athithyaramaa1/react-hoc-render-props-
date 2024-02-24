@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import WrappedComp from './WrappedCompo';
 
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
-
+function LikePost(props) {
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={props.handleSetState}>Like Post {props.state}</button>
     </div>
-  )
+  );
 }
+
+export default WrappedComp(LikePost);
